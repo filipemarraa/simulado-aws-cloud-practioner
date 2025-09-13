@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulado AWS Cloud Practitioner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 style="text-align:center; width:100%;">Simulado AWS Cloud Practitioner</h1>
+    <div class="header-actions">
+      <button id="btnBack" class="btn secondary" hidden>← Voltar</button>
+      <div id="progress" class="progress" hidden></div>
+      <div id="score" class="score" hidden></div>
+      <div id="timer" class="timer" hidden></div>
+    </div>
+  </header>
+
+  <main id="screenSelect" class="screen">
+    <p class="subtitle">Escolha um simulado para começar</p>
+    <div id="simList" class="sim-list"></div>
+  </main>
+
+  <main id="screenQuiz" class="screen" hidden>
+    <section class="question">
+      <div id="questionText" class="question-text"></div>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback"></div>
+    </section>
+    <section class="controls">
+      <button id="btnConfirm" class="btn primary">Confirmar resposta</button>
+      <button id="btnPrev" class="btn" disabled>◀ Anterior</button>
+      <button id="btnNext" class="btn" disabled>Próxima ▶</button>
+      <button id="btnExport" class="btn secondary">Exportar TXT</button>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <!-- Ko-fi Floating Chat -->
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('filipemarra', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#f45d22',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
+    </script>
+  </footer>
+
+  <script src="simulados.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

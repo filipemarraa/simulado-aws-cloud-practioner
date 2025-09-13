@@ -1,6 +1,6 @@
-# simulado_aws_gui.py
+# app.py — Simulado AWS Cloud Practitioner (Tkinter)
 # Requisitos: Python 3 (Tkinter já vem na instalação padrão de Python em Windows/macOS).
-# Execução: python simulado_aws_gui.py
+# Execução: python app.py
 
 import os
 os.environ['TK_SILENCE_DEPRECATION'] = '1'  # Suprime aviso de depreciação no macOS
@@ -1430,12 +1430,13 @@ class SimuladoSelector:
         title_frame = tk.Frame(self.root)
         title_frame.pack(pady=20)
         
-        title_label = tk.Label(title_frame, text="AWS Cloud Practitioner", 
-                              font=("Segoe UI", 20, "bold"), fg="white")
+    # Título (usar cor padrão do tema para melhor contraste)
+    title_label = tk.Label(title_frame, text="AWS Cloud Practitioner", 
+                  font=("Segoe UI", 20, "bold"))
         title_label.pack()
         
-        subtitle_label = tk.Label(title_frame, text="Escolha um simulado para começar", 
-                                 font=("Segoe UI", 12), fg="white")
+    subtitle_label = tk.Label(title_frame, text="Escolha um simulado para começar", 
+                 font=("Segoe UI", 12))
         subtitle_label.pack(pady=(5, 0))
         
         # Frame principal com scroll
@@ -1520,6 +1521,8 @@ class QuizApp:
         self.index = 0
         self.score = 0
         self.answered = [False]*len(self.questoes)
+    # Armazena resultado por questão: True (correta), False (incorreta), None (não respondida)
+    self.results = [None]*len(self.questoes)
 
         # Header
         header = tk.Frame(root)
@@ -1637,8 +1640,9 @@ class QuizApp:
         correct = set(self.questoes[self.index]["correct"])
         chosen = set(selected)
 
-        is_correct = (correct == chosen)
+    is_correct = (correct == chosen)
         self.answered[self.index] = True
+    self.results[self.index] = is_correct
 
         if is_correct:
             self.score += 1
@@ -1682,10 +1686,20 @@ class QuizApp:
     def show_feedback(self, already=False):
         # Exibe o feedback da questão já respondida (quando navega para trás)
         # e desabilita inputs
-        correct = set(self.questoes[self.index]["correct"])
-        # marcamos visualmente: apenas mostra msg; não reavalia escolhas antigas
-        self.feedback_var.set("✅ Já respondida corretamente." if already else "")
-        self.feedback_label.config(fg="green")
+        result = self.results[self.index]
+        if result is True:
+            self.feedback_var.set("✅ Já respondida corretamente.")
+            self.feedback_label.config(fg="green")
+        elif result is False:
+            # Indicar que estava incorreta; se múltipla, reforçar dica
+            if self.questoes[self.index]["multiple"]:
+                self.feedback_var.set("❌ Já respondida incorretamente. (Múltiplas respostas)")
+            else:
+                self.feedback_var.set("❌ Já respondida incorretamente.")
+            self.feedback_label.config(fg="red")
+        else:
+            self.feedback_var.set("")
+            self.feedback_label.config(fg="black")
         for w in self.option_widgets:
             w.config(state="disabled")
         self.btn_confirm.config(state="disabled")
