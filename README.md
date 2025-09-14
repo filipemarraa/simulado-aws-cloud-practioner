@@ -1,5 +1,7 @@
 # Simulado AWS Cloud Practitioner
 
+[🔗 Acesse o simulado online](https://simulado-aws-cloud-practioner.vercel.app/)
+
 Simulado interativo para praticar questões do exame AWS Certified Cloud Practitioner. Disponível em versão web responsiva e acessível, com banco de questões completo, timer, exportação, navegação por teclado e opções de apoio ao desenvolvedor.
 
 ## Funcionalidades
