@@ -1,3 +1,11 @@
+/* Botão Linktree flutuante alinhado com Ko-fi */
+#btnLinktree {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  text-decoration: none;
+}
 .timer{font-weight:600; color:var(--accent); font-size:1.1rem; margin-left:16px; letter-spacing:1px;}
 .fade-in {
   animation: fadeIn .4s ease;
@@ -63,4 +71,4 @@ body{
   .controls{gap:7px; margin-top:10px;}
   .feedback{font-size:0.98rem;}
 }
-}
+
