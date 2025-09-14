@@ -147,11 +147,6 @@ function renderQuestion() {
       options.appendChild(row);
     });
   }
-  // Foco inicial na primeira opção
-  setTimeout(()=>{
-    const first = options.querySelector('.option');
-    if (first) first.focus();
-  }, 100);
   // Navegação por teclado
   options.onkeydown = function(e) {
     const opts = Array.from(options.querySelectorAll('.option'));
