@@ -58,6 +58,7 @@ function updateTimer() {
 }
 
 function initSelect() {
+  btnBack.hidden = true; // Esconde o botão voltar na tela inicial
   simList.innerHTML = '';
   Object.keys(SIMULADOS).forEach((key) => {
     const sim = SIMULADOS[key];
@@ -363,5 +364,8 @@ btnConfirm.addEventListener('click', confirmAnswer);
 btnPrev.addEventListener('click', prevQuestion);
 btnNext.addEventListener('click', nextQuestion);
 btnExport.addEventListener('click', exportTxt);
+
+// Inicializa com botão voltar escondido
+btnBack.hidden = true;
 
 initSelect();

@@ -48,7 +48,9 @@ body{
 .controls{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:14px}
 #btnLinktree {
   margin-left: auto;
-  margin-bottom: -23%;
+}
+#btnBack[hidden] {
+  display: none !important;
 }
 .linktree-btn {
   display: flex;
@@ -64,9 +66,13 @@ body{
   transition: filter .2s;
 }
 @media (prefers-color-scheme: light){
-  :root{--bg:#fafafa; --panel:#fff; --text:#111827; --muted:#4b5563}
-  body{background:#fafafa}
-  .btn.secondary{background:#fff}
+  :root{--bg:#fafafa; --panel:#fff; --text:#1f2937; --muted:#6b7280; --accent:#f59e0b; --ok:#059669; --err:#dc2626}
+  body{background:linear-gradient(180deg,#f3f4f6,#fafafa);}
+  .btn.secondary{background:#f9fafb; border-color:#d1d5db;}
+  .option{background:#f9fafb; border-color:#d1d5db;}
+  .option:focus{border-color:var(--accent); background:#fef3c7;}
+  .card{background:var(--panel); border-color:#e5e7eb;}
+  .app-header,.app-footer{background:rgba(255,255,255,.9);}
 }
 
 @media (max-width: 600px){
