@@ -64,9 +64,11 @@ function initSelect() {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-      <h3>${sim.nome}</h3>
-      <div class="small">${sim.questoes.length} questões</div>
-      <div style="margin-top:10px"><button class="btn primary">Começar</button></div>
+      <div class="card-content">
+        <h3>${sim.nome}</h3>
+        <div class="small">${sim.questoes.length} questões</div>
+      </div>
+      <button class="btn primary">Começar</button>
     `;
     card.querySelector('button').addEventListener('click', () => startQuiz(parseInt(key, 10)));
     simList.appendChild(card);

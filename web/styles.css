@@ -26,20 +26,20 @@ body{
 .h1,h1{margin:0}
 .subtitle{opacity:.9; margin:12px 0 20px}
 .screen{max-width:960px; margin:0 auto; padding:24px}
-.sim-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px}
-.card{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:16px}
-.card h3{margin:0 0 8px}
-.small{color:var(--muted); font-size:.9rem}
-.btn{appearance:none; border:1px solid rgba(255,255,255,.15); background:#1f2937; color:var(--text); padding:10px 14px; border-radius:8px; cursor:pointer}
+.sim-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px;}
+.card{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:20px; word-wrap: break-word; overflow-wrap: break-word;}
+.card h3{margin:0 0 8px; font-size:1.2rem; font-weight:600;}
+.small{color:var(--muted); font-size:.95rem; margin-bottom:12px;}
+.btn{appearance:none; border:1px solid rgba(255,255,255,.15); background:#1f2937; color:var(--text); padding:12px 18px; border-radius:8px; cursor:pointer; font-size:1rem; font-weight:500; min-height:44px; display:inline-flex; align-items:center; justify-content:center;}
 .btn:hover{border-color:rgba(255,255,255,.25)}
 .btn.primary{background:var(--accent); color:#111827; border-color:transparent; font-weight:600}
 .btn.primary:hover{filter:brightness(.95)}
 .btn.secondary{background:#0b1220}
 .progress,.score{margin-left:10px; font-weight:600}
-.question-text{font-size:1.1rem; margin-bottom:10px}
+.question-text{font-size:1.1rem; margin-bottom:16px; line-height: 1.5; word-wrap: break-word; overflow-wrap: break-word;}
 .options{display:flex; flex-direction:column; gap:10px}
 .option{background:#0b1220; padding:10px 12px; border:1px solid rgba(255,255,255,.08); border-radius:8px; display:flex; gap:10px; align-items:flex-start}
-.option{background:#0b1220; padding:10px 12px; border:2px solid rgba(255,255,255,.18); border-radius:8px; display:flex; gap:10px; align-items:flex-start; outline:none}
+.option{background:#0b1220; padding:12px 14px; border:2px solid rgba(255,255,255,.18); border-radius:8px; display:flex; gap:10px; align-items:flex-start; outline:none; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;}
 .option:focus{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent); background:#222}
 .option input{margin-top:3px}
 .feedback{min-height:28px; margin-top:10px; font-weight:600}
@@ -70,14 +70,21 @@ body{
 }
 
 @media (max-width: 600px){
-  .screen{padding:10px;}
-  .app-header,.app-footer{padding:10px 8px; font-size:0.95rem;}
-  .sim-list{grid-template-columns:1fr; gap:10px;}
-  .card{padding:10px; font-size:1rem;}
-  .btn{padding:9px 10px; font-size:1rem;}
-  .question-text{font-size:1rem;}
-  .option{padding:8px 8px; font-size:0.98rem;}
-  .controls{gap:7px; margin-top:10px;}
-  .feedback{font-size:0.98rem;}
+  .screen{padding:20px 16px;}
+  .app-header,.app-footer{padding:16px 20px; font-size:1rem;}
+  .sim-list{grid-template-columns:1fr; gap:16px;}
+  .card{padding:20px; font-size:1.1rem; display:flex; align-items:center; justify-content:space-between; min-height:80px;}
+  .card-content{flex:1;}
+  .card h3{font-size:1.2rem; margin-bottom:6px; line-height:1.2;}
+  .card .small{font-size:1rem; margin-bottom:0;}
+  .card .btn{margin-left:16px; padding:12px 20px; font-size:1.1rem; min-height:44px; flex-shrink:0;}
+  .question-text{font-size:1.3rem; line-height: 1.5; margin-bottom: 20px; font-weight:500;}
+  .option{padding:16px 20px; font-size:1.1rem; line-height: 1.4; min-height:54px; align-items:center;}
+  .controls{gap:14px; margin-top:20px;}
+  .feedback{font-size:1.1rem; min-height: 40px; margin-top:16px;}
+  .timer{font-size:1.1rem; margin-left:12px;}
+  .progress,.score{font-size:1rem; font-weight:600;}
+  #btnLinktree .linktree-btn{padding:12px 20px; font-size:1.1rem;}
+  .subtitle{font-size:1.1rem; margin:16px 0 24px;}
 }
 
