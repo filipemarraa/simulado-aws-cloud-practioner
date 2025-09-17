@@ -73,6 +73,13 @@ body{
     border-color:#d1d5db;
     color:#1f2937;
     font-weight:600;
+    opacity:1;
+  }
+  .btn.secondary:disabled {
+    background: #f3f4f6;
+    color: #b3b3b3;
+    border-color: #e5e7eb;
+    opacity: 1;
   }
   .option{background:#f9fafb; border-color:#d1d5db;}
   .option:focus{border-color:var(--accent); background:#fef3c7;}
